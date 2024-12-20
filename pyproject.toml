@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Oasys"
+version = "1.2.146"
+description = "OrAnge SYnchrotron Suite"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Luca Rebuffi", email = "lrebuffi@anl.gov"},
+    {name = "Manuel Sanchez del Rio"},
+    {name = "Bioinformatics Laboratory, FRI UL"}
+]
+maintainers = [{name = "Luca Rebuffi, Argonne National Lab, USA", email = "lrebuffi@anl.gov"}]
+urls = { "Homepage" = "https://github.com/srio/orange-oasys", "Download" = "https://github.com/srio/orange-oasys"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: X11 Applications :: Qt",
+    "Environment :: Console",
+    "Environment :: Plugins",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: POSIX",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers"
+]
+keywords = ["synchrotron", "simulation"]
+
+dependencies = [
+    "scipy",
+    "silx",
+    "hdf5plugin",
+    "srxraylib",
+    "syned",
+    "wofry"
+]
+
+[tool.setuptools]
+packages = ["orangeoasys",
+            "orangeoasys.util",
+            "orangeoasys.widgets",
+            "orangeoasys.widgets.tools",
+            "orangeoasys.widgets.loop_management"]
+
+[tool.setuptools.package-data]
+"orangeoasys" = ["icons/*.svg", "icons/*.png"]
+"orangeoasys.util" = ["icons/*.svg", "icons/*.png"]
+"orangeoasys.widgets" = ["icons/*.svg", "icons/*.png"]
+"orangeoasys.widgets.tools" = ["icons/*.svg", "icons/*.png"]
+"orangeoasys.widgets.loop_management" = ["icons/*.svg", "icons/*.png"]
+"orangeoasys.widgets.scanning" = ["icons/*.png", "icons/*.svg"]
+
+[project.entry-points."orange.addons"]
+"Oasys" = "orangeoasys"
+
+[project.entry-points."orange.widgets"]
+"Oasys Tools" = "orangeoasys.widgets.tools"
+"Oasys Basic Loops" = "orangeoasys.widgets.loop_management"
+"Oasys Scanning Loops" = "orangeoasys.widgets.scanning"
