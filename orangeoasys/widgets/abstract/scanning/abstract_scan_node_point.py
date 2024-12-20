@@ -1,5 +1,5 @@
-from PyQt5.QtGui import QPalette, QFont, QColor
-from PyQt5.QtWidgets import QMessageBox
+from AnyQt.QtGui import QPalette, QFont, QColor
+from AnyQt.QtWidgets import QMessageBox
 
 from orangewidget import gui
 # from orangewidget.widget import OWAction

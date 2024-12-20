@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QFileDialog
+from AnyQt.QtWidgets import QFileDialog
 
 from orangewidget import gui
 from orangewidget.settings import Setting

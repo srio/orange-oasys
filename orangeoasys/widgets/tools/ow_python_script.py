@@ -5,20 +5,20 @@ import keyword
 import itertools
 import unicodedata
 
-from PyQt5 import QtGui, QtWidgets
+from AnyQt import QtGui, QtWidgets
 
-from PyQt5.QtWidgets import (
+from AnyQt.QtWidgets import (
     QListView, QSizePolicy, QAction,
     QMenu, QSplitter, QToolButton,
     QFileDialog
 )
 
-from PyQt5.QtGui import (
+from AnyQt.QtGui import (
     QTextCursor, QFont, QColor, QPalette, QKeySequence
 )
 
 
-from PyQt5.QtCore import Qt, QRegExp, QByteArray, QItemSelectionModel
+from AnyQt.QtCore import Qt, QRegExp, QByteArray, QItemSelectionModel
 
 from orangeoasys.widgets import widget
 from orangeoasys.widgets import gui as oasysgui

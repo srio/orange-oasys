@@ -1,8 +1,8 @@
 import os, sys
 
 import numpy
-from PyQt5.QtCore import QRect
-from PyQt5.QtWidgets import QApplication, QMessageBox
+from AnyQt.QtCore import QRect
+from AnyQt.QtWidgets import QApplication, QMessageBox
 
 from matplotlib import cm
 from orangeoasys.widgets.gui import FigureCanvas3D

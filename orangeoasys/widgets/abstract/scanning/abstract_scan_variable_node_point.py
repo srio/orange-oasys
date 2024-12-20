@@ -1,7 +1,7 @@
 from orangeoasys.widgets import gui as oasysgui
 
 from orangewidget import gui
-from PyQt5.QtGui import QFont, QPalette, QColor
+from AnyQt.QtGui import QFont, QPalette, QColor
 from orangewidget.settings import Setting
 
 from orangeoasys.widgets.abstract.scanning.abstract_scan_node_point import AbstractScanLoopPoint

@@ -2,8 +2,8 @@ import os
 
 import numpy
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QGridLayout, QFileDialog, QMessageBox, QLabel, QComboBox, QTextEdit
+from AnyQt.QtCore import Qt
+from AnyQt.QtWidgets import QWidget, QGridLayout, QFileDialog, QMessageBox, QLabel, QComboBox, QTextEdit
 
 from orangewidget import gui as orange_gui
 

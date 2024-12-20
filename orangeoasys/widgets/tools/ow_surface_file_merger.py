@@ -1,9 +1,9 @@
 import os, sys
 
 import numpy
-from PyQt5.QtCore import QRect, Qt
-from PyQt5.QtWidgets import QApplication, QMessageBox, QLabel, QSizePolicy
-from PyQt5.QtGui import QTextCursor, QFont, QPalette, QColor, QPixmap
+from AnyQt.QtCore import QRect, Qt
+from AnyQt.QtWidgets import QApplication, QMessageBox, QLabel, QSizePolicy
+from AnyQt.QtGui import QTextCursor, QFont, QPalette, QColor, QPixmap
 
 from matplotlib import cm
 from orangeoasys.widgets.gui import FigureCanvas3D

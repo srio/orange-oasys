@@ -1,8 +1,8 @@
 import os
 
-from PyQt5.QtWidgets import QScrollArea
-from PyQt5.QtCore import Qt
-from PyQt5.Qt import QIcon
+from AnyQt.QtWidgets import QScrollArea
+from AnyQt.QtCore import Qt
+from AnyQt.QtGui import QIcon
 
 # from orangewidget import widget
 from Orange.widgets import widget
@@ -163,8 +163,8 @@ OutputSignal = widget.OutputSignal
 from orangewidget import gui
 from orangewidget.settings import Setting
 
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtCore import QRect
+from AnyQt.QtWidgets import QApplication
+from AnyQt.QtCore import QRect
 
 class AutomaticWidget(OWWidget):
 

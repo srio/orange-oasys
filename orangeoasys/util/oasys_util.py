@@ -1,7 +1,7 @@
 import os, numpy
 
 try:
-    from PyQt5 import QtCore, QtWidgets, QtGui
+    from AnyQt import QtCore, QtWidgets, QtGui
 except:
     pass
 
@@ -161,9 +161,9 @@ try:
 
     import sys, threading
 
-    from PyQt5.QtWidgets import QWidget, QDialog, QVBoxLayout, QLabel
-    from PyQt5.QtGui import QPainter, QPalette, QBrush, QPen, QColor
-    from PyQt5.QtCore import Qt
+    from AnyQt.QtWidgets import QWidget, QDialog, QVBoxLayout, QLabel
+    from AnyQt.QtGui import QPainter, QPalette, QBrush, QPen, QColor
+    from AnyQt.QtCore import Qt
 
     class ShowWaitDialog(QDialog):
         def __init__(self, title, text, width=500, height=80, parent=None):

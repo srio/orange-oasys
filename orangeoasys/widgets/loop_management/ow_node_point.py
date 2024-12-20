@@ -7,8 +7,8 @@ from orangeoasys.widgets import gui as oasysgui
 from orangeoasys.widgets.gui import ConfirmDialog
 
 from orangewidget import gui
-from PyQt5.QtGui import QFont, QPalette, QColor
-from PyQt5.QtWidgets import QMessageBox
+from AnyQt.QtGui import QFont, QPalette, QColor
+from AnyQt.QtWidgets import QMessageBox
 from orangewidget.settings import Setting
 
 from orangeoasys.util.oasys_util import TriggerIn, TriggerOut
@@ -193,7 +193,7 @@ class LoopPoint(widget.OWWidget):
     def get_object_name(self):
         return "Object"
 
-from PyQt5.QtWidgets import QApplication
+from AnyQt.QtWidgets import QApplication
 
 if __name__ == "__main__":
     # a = QApplication(sys.argv)

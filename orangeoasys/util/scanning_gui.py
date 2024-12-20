@@ -1,6 +1,6 @@
 import os, numpy
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout
+from AnyQt.QtWidgets import QWidget, QVBoxLayout
 
 from orangeoasys.widgets import gui as oasysgui
 from orangeoasys.util.oasys_util import get_sigma, get_average
