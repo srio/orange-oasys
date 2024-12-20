@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "Oasys"
-version = "1.2.146"
+version = "0.0.1"
 description = "OrAnge SYnchrotron Suite"
 readme = "README.md"
 license = {text = "MIT"}
