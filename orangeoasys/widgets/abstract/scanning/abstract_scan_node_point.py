@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QMessageBox
 
 from orangewidget import gui
 # from orangewidget.widget import OWAction
-from orangeoasys.widgets.owaction import OWAction
+from AnyQt.QtWidgets import QAction as OWAction
 from orangewidget.settings import Setting
 
 from orangeoasys.widgets import widget

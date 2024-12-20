@@ -1,7 +1,7 @@
 import sys
 
 # from orangewidget.widget import OWAction
-from orangeoasys.widgets.owaction import OWAction
+from AnyQt.QtWidgets import QAction as OWAction
 from orangeoasys.widgets import widget
 from orangeoasys.widgets import gui as oasysgui
 from orangeoasys.widgets.gui import ConfirmDialog
