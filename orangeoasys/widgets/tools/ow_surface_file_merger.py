@@ -12,9 +12,7 @@ from matplotlib.figure import Figure
 from orangewidget import gui, widget
 from orangewidget.settings import Setting
 
-# from oasys.widgets.widget import OWWidget
-from Orange.widgets.widget import OWWidget
-
+from orangeoasys.widgets.widget import OWWidget
 from orangeoasys.widgets import gui as oasysgui
 from orangeoasys.widgets import congruence
 

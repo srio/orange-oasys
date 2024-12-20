@@ -1,7 +1,7 @@
 from math import isnan, floor
 from numbers import Real
 
-from oasys.util.script.value import Value, Unknown
+from orangeoasys.util.script.value import Value, Unknown
 import collections
 
 

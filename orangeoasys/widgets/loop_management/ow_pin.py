@@ -1,19 +1,13 @@
-import sys
-
 from orangeoasys.widgets import widget
-# from Orange.widgets import widget
-from Orange.widgets.widget import OWWidget
 
 from orangewidget import  gui
 
-from PyQt5 import QtGui
 
 from orangeoasys.util.oasys_util import TriggerOut
-from silx.gui import qt
 from Orange.widgets.widget import Input, Output
 
 
-class Pin(OWWidget): # qt.QWidget): # widget.OWWidget):
+class Pin(widget.OWWidget):
 
     name = "Pin"
     description = "Tools: Pin"
@@ -41,7 +35,7 @@ class Pin(OWWidget): # qt.QWidget): # widget.OWWidget):
     want_control_area = 1
 
     def __init__(self):
-         # super().__init__()
+
          self.setFixedWidth(300)
          self.setFixedHeight(100)
 
@@ -57,18 +51,15 @@ class Pin(OWWidget): # qt.QWidget): # widget.OWWidget):
 
 
 if __name__ == "__main__":
-    from PyQt5 import QtGui, QtWidgets
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    ow = Pin()
-    ow.show()
-    app.exec_()
-    ow.saveSettings()
-
-    # a = QtGui.QApplication(sys.argv)
+    # import sys
+    # from PyQt5 import QtGui
+    # from PyQt5 import QtGui, QtWidgets
+    # import sys
+    # app = QtWidgets.QApplication(sys.argv)
     # ow = Pin()
     # ow.show()
-    # a.exec_()
+    # app.exec_()
     # ow.saveSettings()
-    # from orangewidget.utils.widgetpreview import WidgetPreview
-    # WidgetPreview(Pin).run()
+
+    from orangewidget.utils.widgetpreview import WidgetPreview
+    WidgetPreview(Pin).run()

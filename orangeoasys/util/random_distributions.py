@@ -13,7 +13,7 @@
 
 from math import exp
 
-from oasys.util.enhanced_grid import Grid2D
+from orangeoasys.util.enhanced_grid import Grid2D
 
 newSampleCount = 1000
 THRESHOLD = 0.001

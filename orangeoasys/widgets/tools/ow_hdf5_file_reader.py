@@ -6,18 +6,13 @@ from PyQt5.QtWidgets import QApplication, QMessageBox
 from orangewidget import gui
 from orangewidget.settings import Setting
 
-# from oasys.widgets.widget import OWWidget
-# from oasys.widgets import gui as oasysgui
-# from oasys.widgets import congruence
+from orangeoasys.widgets.widget import OWWidget
+from orangeoasys.widgets import gui as oasysgui
+from orangeoasys.widgets import congruence
 
 from silx.gui import qt
 import silx.gui.hdf5
 from silx.gui.data.DataViewerFrame import DataViewerFrame
-
-from orangewidget.widget import OWBaseWidget, Output
-
-from PyQt5.QtWidgets import QWidget, QGridLayout, QFileDialog, QMessageBox, QLabel, QComboBox, QTextEdit
-import os
 
 class Hdf5TreeViewWidget(qt.QWidget):
     def __init__(self, file_names=None):
@@ -73,30 +68,28 @@ class Hdf5TreeViewWidget(qt.QWidget):
         self.__createEdfButton.setCallable(function)
 
 
-class OWHdf5FileReader(OWBaseWidget, Output):
+class OWHDF5FileReader(OWWidget):
     name = "HDF5 File Reader"
+    id = "hdf5_file_reader"
     description = "HDF5 File Reader"
     icon = "icons/hdf5.png"
-    category = "Oasys Tools"
+    author = "Luca Rebuffi"
+    maintainer_email = "lrebuffi@anl.gov"
     priority = 2
-
-    # id = "hdf5_file_reader"
-    # author = "Luca Rebuffi"
-    # maintainer_email = "lrebuffi@anl.gov"
-    # category = ""
-    # keywords = ["hdf5_file_reader"]
+    category = "Oasys Tools"
+    keywords = ["hdf5_file_reader"]
 
     want_main_area = 1
-    # want_control_area = 1
+    want_control_area = 1
 
     MAX_WIDTH = 1320
     MAX_HEIGHT = 700
 
-    # IMAGE_WIDTH = 860
-    # IMAGE_HEIGHT = 645
+    IMAGE_WIDTH = 860
+    IMAGE_HEIGHT = 645
 
-    # CONTROL_AREA_WIDTH = 405
-    # TABS_AREA_HEIGHT = 618
+    CONTROL_AREA_WIDTH = 405
+    TABS_AREA_HEIGHT = 618
 
     hdf5_file_name = Setting('file.hdf5')
 
@@ -114,14 +107,14 @@ class OWHdf5FileReader(OWBaseWidget, Output):
 
         gui.separator(self.controlArea)
 
-        button_box = gui.widgetBox(self.controlArea, "", addSpace=False, orientation="horizontal")
+        button_box = oasysgui.widgetBox(self.controlArea, "", addSpace=False, orientation="horizontal")
 
         button = gui.button(button_box, self, "Load HDF5 file", callback=self.load_file)
         button.setFixedHeight(45)
 
-        input_box_l = gui.widgetBox(self.controlArea, "Input", addSpace=True, orientation="horizontal") #, height=self.TABS_AREA_HEIGHT)
+        input_box_l = oasysgui.widgetBox(self.controlArea, "Input", addSpace=True, orientation="horizontal", height=self.TABS_AREA_HEIGHT)
 
-        self.le_hdf5_file_name = gui.lineEdit(input_box_l, self, "hdf5_file_name", "HDF5 File Name",
+        self.le_hdf5_file_name = oasysgui.lineEdit(input_box_l, self, "hdf5_file_name", "HDF5 File Name",
                                                         labelWidth=120, valueType=str, orientation="horizontal")
 
         gui.button(input_box_l, self, "...", callback=self.selectPlotXYFile)
@@ -135,26 +128,21 @@ class OWHdf5FileReader(OWBaseWidget, Output):
 
     def load_file(self):
         try:
-            # hdf5_file_name = congruence.checkDir(self.hdf5_file_name)
+            hdf5_file_name = congruence.checkDir(self.hdf5_file_name)
 
-            self.tree_view.load_file(self.hdf5_file_name)
-            self.tree_view.set_text("Loaded File: " + self.hdf5_file_name)
+            self.tree_view.load_file(hdf5_file_name)
+            self.tree_view.set_text("Loaded File: " + hdf5_file_name)
 
         except Exception as exception:
             QMessageBox.critical(self, "Error", exception.args[0], QMessageBox.Ok)
 
-            # if self.IS_DEVELOP: raise exception
+            if self.IS_DEVELOP: raise exception
 
     def selectPlotXYFile(self):
-        self.le_hdf5_file_name.setText(selectFileFromDialog(self, self.hdf5_file_name, "Select Input File", file_extension_filter="HDF5 Files (*.hdf5 *.h5 *.hdf)"))
-
-def selectFileFromDialog(widget, previous_file_path="", message="Select File", start_directory=os.curdir, file_extension_filter="*.*"):
-    file_path = QFileDialog.getOpenFileName(widget, message, start_directory, file_extension_filter)[0]
-    if not file_path is None and not file_path.strip() == "": return file_path
-    else: return previous_file_path
+        self.le_hdf5_file_name.setText(oasysgui.selectFileFromDialog(self, self.hdf5_file_name, "Select Input File", file_extension_filter="HDF5 Files (*.hdf5 *.h5 *.hdf)"))
 
 
 if __name__ == "__main__":
     from orangewidget.utils.widgetpreview import WidgetPreview
-    WidgetPreview(OWHdf5FileReader).run()
+    WidgetPreview(OWHDF5FileReader).run()
 

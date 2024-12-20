@@ -44,14 +44,22 @@ dependencies = [
 [tool.setuptools]
 packages = ["orangeoasys",
             "orangeoasys.util",
+            "orangeoasys.util.script",
             "orangeoasys.widgets",
+            "orangeoasys.widgets.abstract",
+            "orangeoasys.widgets.abstract.scanning",
             "orangeoasys.widgets.tools",
-            "orangeoasys.widgets.loop_management"]
+            "orangeoasys.widgets.loop_management",
+            "orangeoasys.widgets.scanning",
+]
 
 [tool.setuptools.package-data]
 "orangeoasys" = ["icons/*.svg", "icons/*.png"]
 "orangeoasys.util" = ["icons/*.svg", "icons/*.png"]
+"orangeoasys.util.script" = ["icons/*.svg", "icons/*.png"]
 "orangeoasys.widgets" = ["icons/*.svg", "icons/*.png"]
+"orangeoasys.widgets.abstract" = ["icons/*.svg", "icons/*.png"]
+"orangeoasys.widgets.abstract.scanning" = ["icons/*.svg", "icons/*.png"]
 "orangeoasys.widgets.tools" = ["icons/*.svg", "icons/*.png"]
 "orangeoasys.widgets.loop_management" = ["icons/*.svg", "icons/*.png"]
 "orangeoasys.widgets.scanning" = ["icons/*.png", "icons/*.svg"]

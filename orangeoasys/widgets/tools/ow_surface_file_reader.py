@@ -11,9 +11,7 @@ from matplotlib.figure import Figure
 from orangewidget import gui
 from orangewidget.settings import Setting
 
-# from orangeoasys.widgets.widget import OWWidget
-from Orange.widgets.widget import OWWidget
-
+from orangeoasys.widgets.widget import OWWidget
 from orangeoasys.widgets import gui as oasysgui
 from orangeoasys.widgets import congruence
 
@@ -98,7 +96,6 @@ class OWSurfaceFileReader(OWWidget):
 
         self.le_surface_file_name = oasysgui.lineEdit(box, self, "surface_file_name", "Surface File Name",
                                                         labelWidth=120, valueType=str, orientation="horizontal")
-        # widget, master, value, label, labelWidth, orientation, box, callback, valueType, validator, controlWidth, callbackOnType, focusInCallback, enterPlaceholder, ** misc
 
         gui.button(box, self, "...", callback=self.selectSurfaceFile)
 

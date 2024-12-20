@@ -2,8 +2,8 @@ import os, numpy
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout
 
-from oasys.widgets import gui as oasysgui
-from oasys.util.oasys_util import get_sigma, get_average
+from orangeoasys.widgets import gui as oasysgui
+from orangeoasys.util.oasys_util import get_sigma, get_average
 
 class HistogramData(object):
     scan_value = 0.0

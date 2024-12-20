@@ -144,6 +144,7 @@ class AbstractScanLoopPoint(widget.OWWidget):
                                                                                     "variable_display_name": self.variable_display_name,
                                                                                     "variable_value": self.current_variable_value,
                                                                                     "variable_um": self.variable_um if self.has_variable_um() else ""}))
+
     def stopLoop(self):
         if ConfirmDialog.confirmed(parent=self, message="Confirm Interruption of the Loop?"):
             self.run_loop = False

@@ -20,10 +20,9 @@ from PyQt5.QtGui import (
 
 from PyQt5.QtCore import Qt, QRegExp, QByteArray, QItemSelectionModel
 
-from Orange.widgets import widget
-from Orange.widgets import gui as oasysgui
-#from oasys.util.script import itemmodels
-from Orange.widgets.utils import itemmodels
+from orangeoasys.widgets import widget
+from orangeoasys.widgets import gui as oasysgui
+from orangeoasys.util.script import itemmodels
 
 from orangewidget import gui
 from orangewidget.settings import Setting
@@ -724,8 +723,10 @@ class OWPythonScript(widget.OWWidget):
         self.console.setFont(font)
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    ow = OWPythonScript()
-    ow.show()
-    app.exec_()
-    ow.saveSettings()
+    # app = QtWidgets.QApplication(sys.argv)
+    # ow = OWPythonScript()
+    # ow.show()
+    # app.exec_()
+    # ow.saveSettings()
+    from orangewidget.utils.widgetpreview import WidgetPreview
+    WidgetPreview(OWPythonScript).run()

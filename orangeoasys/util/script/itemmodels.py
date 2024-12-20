@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import (
     QWidget, QBoxLayout, QToolButton, QAbstractButton, QAction
 )
 
-from oasys.util.script.variable import (
+from orangeoasys.util.script.variable import (
     Variable, DiscreteVariable, ContinuousVariable, StringVariable
 )
 from orangewidget import gui
